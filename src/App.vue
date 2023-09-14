@@ -1,17 +1,29 @@
 <script setup lang="ts">
 import {
-  Edit
+  Edit,
+  Plus
 } from '@element-plus/icons-vue'
 </script>
 
 <template>
   <div>
+  <div class='a'>fasdfad</div>
+  <HelloWorld message="cnmd"></HelloWorld>
+    <SvgIcon name='voice' width="100px" height="100px"></SvgIcon>
     <el-button type="success" size="small" :icon="Edit">Default</el-button>
+    <el-button type="primary" size="default" :icon="Plus">Default</el-button>
+
+  
   </div>
 
 </template>
 
-<style scoped>
+<style lang='scss' scoped>
+.a{
+color:$color;
+width:200px;
+height:200px;
+}
 .logo {
   height: 6em;
   padding: 1.5em;
