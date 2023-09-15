@@ -1,32 +1,24 @@
-import { createApp } from 'vue';
-import ElementPlus from 'element-plus'
-import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
-import 'element-plus/dist/index.css'
-import './style.css';
+console.log(13);
+
+import { createApp } from "vue";
+import ElementPlus from "element-plus";
+import zhCn from "element-plus/dist/locale/zh-cn.mjs";
+import "element-plus/dist/index.css";
+import "./style.css";
 import App from "@/App.vue";
+// import request from '@/utils/request.ts';
+// console.log(import.meta.env.VITE_APP_BASE_API);
+// console.log(import.meta.env,request);
 
 
+import "virtual:svg-icons-register";
+import globalComponent from "./components/index.ts";
 
-import axios from "axios";
+import "@/styles/index.scss";
+import router from './router'
 
-axios({
-    url:'/api/user/login',
-    method:"post",
-    data:{
-        username:'admin',
-        password:'1112111' 
-    }
-}).then((res) => { console.log(res);
- }).catch((err) => {console.log(err);})
-
-
-console.log(import.meta.env);
-
-import 'virtual:svg-icons-register'
-import globalComponent from './components/index.ts';
-
-import '@/styles/index.scss'
-
-createApp(App).use(ElementPlus,{
+createApp(App)
+  .use(ElementPlus, {
     locale: zhCn,
-}).use(globalComponent).mount("#app");
+  })
+  .use(globalComponent).use(router).mount("#app");
